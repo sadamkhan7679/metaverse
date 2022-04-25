@@ -1,0 +1,126 @@
+@use './core/animation.scss';
+
+.mint-area {
+  // border-radius: 35px;
+  box-shadow: var(--glow-2);
+  height: auto;
+  padding: 2rem;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  background-image: linear-gradient(to bottom, #0d2d3f 0%, #051a25 100%);
+  // color: rgb(27, 27, 27);
+  position: relative;
+
+  &.admin {
+    display: grid;
+  }
+
+  &:before {
+    height: 6px;
+    width: 100%;
+    position: absolute;
+    content: " ";
+    top: 0;
+    left: 0;
+    background: var(--grad-4);
+
+    animation: {
+      name: gradientFlow;
+      timing-function: ease-in-out;
+      duration: 8s;
+      iteration-count: infinite;
+      fill-mode: both;
+      direction: alternate;
+    }
+  }
+}
+
+.mint-zone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+.mint-input {
+  width: 90px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.mint-error {
+  background: #111;
+  color: red;
+  border-radius: 25px;
+  font-size: 12px;
+  padding: 25px;
+  width: 70%;
+  max-width: fit-content;
+  overflow-wrap: break-word;
+
+  & button {
+    background: transparent;
+    border: solid red 1px;
+    border-radius: 5px;
+    color: red;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+  }
+}
+
+dialog.mint-error::backdrop {
+  background: rgba(17, 17, 17, 0.8);
+}
+
+.connected-to { 
+  &__group {
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  &__title {
+    font-size: 1rem;
+  }
+  
+  &__address {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+}
+
+.metamask-hint {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  :nth-child(2) {
+    margin-bottom: 0;
+  }
+  :nth-child(3) {
+    margin-top: 0;
+  }
+}
+
+.metamask-icon {
+  width: 100%;
+  
+  &-box {
+    max-width: 100px;
+  }
+}

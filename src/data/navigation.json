@@ -1,0 +1,22 @@
+{
+  "nav-items": [
+    {
+      "label": "Home",
+      "path": "/",
+      "renderAs": "menu-item",
+      "isLocked": false
+    },
+    {
+      "label": "Benefits",
+      "path": "/benefits",
+      "renderAs": "menu-item",
+      "includeInNav": false
+    },
+    {
+      "label": "Contact Us",
+      "path": "/contact-us",
+      "renderAs": "menu-item",
+      "isLocked": false
+    }
+  ]
+}

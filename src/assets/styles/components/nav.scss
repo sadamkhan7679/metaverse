@@ -1,0 +1,157 @@
+.nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  color: #fff;
+  z-index: 150;
+  left: 0;
+}
+
+.nav-list {
+  list-style-type: none;
+  padding: 50px 20px;
+  margin: 0;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-item {
+  font-family: var(--font-primary);
+  display: inline-block;
+  position: relative;
+
+  &:not(:last-child) {
+    margin-right: 60px;
+  }
+
+  &:after {
+    --size: 8px;
+    content: " ";
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    bottom: -10px;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    clip-path: polygon(50% 30%, 0 100%, 100% 100%);
+
+    background-color: #fff;
+    opacity: 0;
+
+    transition: transform .2s, opacity .2s;
+  }
+
+  &:hover:after {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  font-size: 2rem;
+  color: #fff;
+  border: none;
+  position: absolute;
+  top: 42px;
+  right: 16px;
+  transition: color .2s;
+
+  &:hover {
+    color: var(--color-accent-pink);
+    cursor: pointer;
+  }
+}
+
+.toggle-icon {
+  position: absolute;
+  top: 0;
+  right: 50%;
+  transform: translate(0, -50%);
+}
+
+@media screen and (max-width: 500px) {
+  .mobile-toggle {
+    display: block;
+    // z-index: 99;
+  }
+
+  .nav {
+    position: fixed;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    background: rgb(2, 22, 41);
+    align-items: start;
+
+    transform: translateY(-100%);
+    padding-left: 50px;
+
+    transition: transform .3s;
+    z-index: 3;
+    position: relative;
+
+    &:after {
+      content: " ";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background-image: var(--grad-1);
+      background-size: 300%;
+      
+      animation: {
+        name: gradientFlow;
+        duration: 6s;
+        timing-function: ease-in-out;
+        iteration-count: infinite;
+        fill-mode: both;
+        direction: alternate; 
+      }
+    }
+  }
+
+  
+  .open-drawer {
+      transform: translateY(0);
+  }
+
+  .nav-item {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    
+    &:after {
+      left: -20px;
+      top: 50%;
+      transform: translate(-100%, -50%);
+      clip-path: polygon(0 0, 0% 100%, 70% 50%);
+    }  
+
+    &:hover:after {
+      transform: translate(0, -50%);
+    }
+  }
+}
+
+@keyframes gradientFlow {
+  from { 
+    background-position: 0%;
+  }
+  to { 
+    background-position: 100%;
+  }
+}

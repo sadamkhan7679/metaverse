@@ -1,0 +1,18 @@
+.advisory {
+  &__link {
+    color: #fff;
+  }
+  &__to-be {
+    // text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  &__headline {
+    font-size: 1.7rem;
+    color: #fff;
+  }
+}
+
+.to-be-link {
+  color: var(--color-accent-pink);
+}

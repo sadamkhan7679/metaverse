@@ -1,0 +1,42 @@
+.action {  
+  &__base {
+    --clr-bg: #102033;
+    --clr-font: #c77fff;
+    --clr-icon: #050b15;
+  
+    --clr-bg-hover: #6a4dff;
+    --clr-font-hover: #ffffff;
+    --clr-icon-hover: #3c25ff;
+  
+    --clr-glow-outter: #c300f4;
+    --clr-glow-inner: #6a4dff;
+    --clr-glow-inner-hover: #6b4dff80;
+
+    --glow-inner: 0 0 12px var(--clr-glow-inner-hover);
+    --glow-inner-hover: 0 0 12px var(--clr-glow-inner);
+    --glow-outter: 0 0 50px var(--clr-glow-outter);
+
+    transition: {
+      property: color, background-color, box-shadow;
+      duration: .3s;
+    };
+
+    color: var(--clr-font);
+    background-color: var(--clr-bg);
+    box-shadow: var(--glow-inner-hover), transparent;
+    
+    &:hover {
+      color: var(--clr-font-hover);
+      background-color: var(--clr-bg-hover);
+      box-shadow: var(--glow-inner), var(--glow-outter);
+      
+      & .action__icon {
+        color: var(--clr-icon-hover);
+      }
+    }
+  }
+
+  &__icon {
+    color: var(--clr-icon);
+  }
+}

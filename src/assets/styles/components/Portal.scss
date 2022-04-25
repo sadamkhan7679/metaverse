@@ -1,0 +1,74 @@
+.portal {
+  width: 50vw; 
+  height: calc(100% + 4%);
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+
+  &__image {
+    bottom: 0;
+
+    &--static {
+      height: calc(80vh + 4%);
+      bottom: 0;
+    }
+  }
+
+  &__anim {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 10px;
+    right: -10px;
+    width: inherit;
+    height: 100%;
+    z-index: 1;
+    clip-path: polygon(112% 0, 18% 100%, 100% 100%);
+  }
+
+  &__glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+    z-index: 30;
+  }
+
+  &__background {
+    position: absolute;
+    width: 110%;
+    height: 120%;
+    right: 0;
+    bottom: -10%;
+    // background-image: url(../image/portal-anim-background.png);
+    background-size: 200%;
+    background-position: 50% 30%;
+    z-index: 1;
+  }
+
+  &__stars--background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    // background-image: url(../image/portal-anim-stars-background.png);
+    background-size: 200%;
+    background-position: 50% 30%;
+    z-index: 5;
+  }
+
+  &__stars--foreground {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    // background-image: url(../image/portal-anim-stars-foreground.png);
+    background-size: 200%;
+    background-position: 40% 0%;
+    z-index: 5;
+
+  }
+}

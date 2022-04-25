@@ -1,0 +1,34 @@
+@use './text.scss';
+
+// .link {
+//   @extend .inline-grad-text;
+
+//   text-decoration: none;
+//   position: relative;
+
+//   &:after {
+//     transition: background .3s;
+//     background: transparent;
+//   }
+
+//   &:hover:after {
+//     background: var(--color-aqua);
+//     position: absolute;
+//     content: " ";
+//     width: 100%;
+//     height: 5px;
+//     bottom: 0;
+//     left: 0;
+
+//   }
+// }
+
+.link {
+  &__wrapper {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

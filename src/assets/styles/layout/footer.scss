@@ -1,0 +1,113 @@
+@use '../components/Text.scss';
+
+.footer {
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-navy),
+    rgb(0, 0, 0, 1)
+  );
+  box-shadow: 0 -10px 50px rgb(0, 0, 0, 5);
+  color: var(--color-font-light);
+  font-size: .8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 8px 0;
+  position: relative;
+  overflow: hidden;
+
+  &__background {
+    z-index: 0;
+    left: 50%;
+    top: 0;
+
+    & .city__image { transform: translateX(-50%) translateY(-50%) scale(2); }
+
+  }
+
+  &__logo {
+      display: inherit;
+      width: 85%;
+      max-width: 500px;
+      filter: drop-shadow(0 0 120px rgba(0, 174, 255, 0.4)) ;
+  }
+
+  &__content {
+    padding: 40px 15px 40px;
+  
+    z-index: 1;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+    justify-items: center;
+    align-items: flex-start;
+    max-width: 1000px;
+
+    width: 100%;
+  
+    @media screen and (max-width: 800px) {
+      grid-template-columns: 1fr 1fr; 
+    }
+  }
+
+  &__section {
+    margin: 30px 0;
+  }
+
+  &__list {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  &__list-item {
+    margin: 8px 0;
+  }
+
+  &__link {
+    color: #fff;
+    font-weight: inherit;
+
+    &--social {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      color: inherit;
+    }
+  }
+
+  &__heading {
+    @extend .text--accent;
+    line-height: 1.6;
+    transform: rotateZ(-3deg) translateX(-13px);
+    --color: var(--color-accent-yellow);
+
+    &:before {
+      transform: translate(-50%, -50%) rotateZ(2deg);
+    }
+  }
+
+  &__copy {
+    // background: var(--clr-navy-dark);
+    color: rgba(255,255,255, 0.5);
+    text-align: center;
+    font-size: .8rem;
+    padding: 26px 0;
+  }
+}
+
+
+.social {
+  &__icon {
+    font-size: 1.2rem;
+    margin-right: 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  &__label {
+    color: inherit;
+  }
+}
+

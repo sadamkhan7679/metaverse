@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Atmospheric';
+  src:  local("Atmospheric"), 
+        url("../../fonts/aAtmospheric.otf") format("opentype"),
+        url("../../fonts/aAtmospheric.ttf") format("truetype"),
+        url("../../fonts/aAtmospheric.woff") format("woff"),
+        url("../../fonts/aAtmospheric.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Paradox";
+  src: 
+    local("Paradox"),
+    url("../../fonts/paradox-origin-font.otf") format("opentype");
+  font-weight: normal;
+  font-display: swap;
+}

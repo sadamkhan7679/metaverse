@@ -1,0 +1,154 @@
+@use './Text.scss';
+
+.utils {
+  --bg-clr-0: rgb(23, 191, 197) -20%;
+  --bg-clr-1: rgb(12, 98, 156) 10%;
+  --bg-clr-2: rgb(9, 49, 124) 50%; // previous
+  --bg-clr-3: rgb(85, 16, 112) 100%;
+  
+  --bg: linear-gradient(
+    -45deg, 
+    var(--bg-clr-0),
+    var(--bg-clr-1),
+    var(--bg-clr-2),
+    var(--bg-clr-3)
+  );
+
+  text-shadow: 0 0 4px rgb(0, 0, 0, 1);
+
+  &__button {
+    min-width: unset;
+    height: unset;
+    padding: 10px;
+    font-size: .8rem;
+    margin: 0 4px;
+
+    @media screen and (max-width: 440px) {
+      margin: 0;
+    }
+  }
+
+  &__button-group {
+    display: flex;
+    flex-direction: row;
+    margin: 0 0 3rem;
+    z-index: 10;
+
+    @media screen and (max-width: 440px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 10px;
+    }
+  }
+
+  &__hint {
+    text-transform: uppercase;
+    font-size: .8rem;
+    margin: 30px 0 30px;
+    opacity: .8;
+    line-height: 1.6;
+  }
+
+  &__heading {
+    font-family: paradox;
+    font-size: 2rem;
+  }
+
+  &__headline {
+    color: #fff;
+    margin-bottom: 30px;
+  }
+
+  &__section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px 40px;
+    text-align: center;
+  }
+
+  &__background-box {
+    opacity: 1;
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    max-width: 900px;
+    margin-bottom: 30px;
+    aspect-ratio: 1 / 1;
+  }
+
+  &__click-box {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    grid-area: 1 / 1;
+    cursor: pointer;
+    background: transparent;
+
+    z-index: 1;
+
+    &:hover .city__image,
+    & .active {
+      opacity: 1;
+    }
+
+    &.area-1 {
+      clip-path: polygon(100% 0, 100% 18%, 50% 50%, 0 19%, 0 0);
+    }
+    &.area-2 {
+      clip-path: polygon(100% 18%, 50% 50%, 50% 100%, 100% 100%);
+    }
+    &.area-3 {
+      clip-path: polygon(0 19%, 50% 50%, 50% 100%, 0 100%);
+    }
+    &.area-4 {
+      opacity: 1;
+      clip-path: circle(13.6% at 50% 49.3%);
+      background-position: 50% 50%;
+      background-image: var(--bg);
+      z-index: 2;
+    }
+  }
+
+  &__panel {
+    background-image: var(--bg);
+    box-shadow: 0 4px 15px rgb(0, 0, 0, 1);
+    padding: 50px 3% 3%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    // display: grid;
+    // grid-template: 1fr / 1fr;
+
+    // overflow: hidden;
+      
+    &-content {
+      padding: 30px;
+      padding-right: 30%;
+      z-index: 2;
+    }
+  }
+
+  &__info-box {
+    margin-top: 2rem;
+    
+    & h2 {
+      text-transform: uppercase;
+      margin-bottom: 2.6rem;
+      font-family: paradox;
+    }
+
+    & h3 {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      margin: 1.7rem 0 0.5rem;
+    }
+
+    & p {
+      @extend .text--paragraph;
+    }
+  }
+
+}

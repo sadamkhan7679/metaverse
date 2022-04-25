@@ -1,0 +1,107 @@
+.timer {
+  width: clamp(250px, 75vw, 600px) !important;
+  display: grid;
+  grid-template-columns: 1fr min-content 1fr min-content 1fr min-content 1fr;
+  grid-template-rows: 1fr;
+  max-width: 600px;
+  margin: 0 auto;
+  pointer-events: none;
+  user-select: none;
+  font-size: clamp(1.2rem, 0.4200rem + 4.1600vw, 2.5rem);
+
+  &__group {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2.3em min-content;
+    text-align: center;
+    position: relative;
+    filter: drop-shadow(0 0 100px #2a98ff);
+  }
+  
+  &__value {
+    position: relative;
+    font-size: 1.8em;
+    margin: 0;
+    padding: 0;
+    filter: drop-shadow(0 0 50px #2a98ff);
+    perspective: 1.5em;
+    transform-style: preserve-3d;
+    
+    &--inner {
+      background-image: linear-gradient(to bottom, var(--timer-grad-light) 0%, var(--timer-grad-dark) 100%);
+      background-size: 100%;
+      background-repeat: repeat;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+    
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+      filter: drop-shadow(0 0 2px #f6faffbd);
+  
+      font-weight: 900;
+      top: 0;
+      
+      width: 100%;
+      left: 0;
+    }
+  }
+
+  &__label {
+    text-transform: uppercase;
+    opacity: 0.5;
+    text-shadow: 0 0 8px rgb(0, 0, 0, 1);
+    font-size: .4em;
+  }
+}
+
+.divider {
+  --size: 0.2em;
+  position: relative;
+  filter: drop-shadow(0 0 10px var(--timer-grad-light)) drop-shadow(0 0 2px #f6faffbd);
+  height: 100%;
+  width: var(--size);
+
+  &:after {
+    position: absolute;
+    width: calc(var(--size) * 1.2);
+    height: var(--size);
+    top: 40%;
+    left: 50%;
+    content: " ";
+    background-image: linear-gradient(to bottom, var(--timer-grad-light) 0%, var(--timer-grad-dark) 100%);
+    transform: translate(-50%, -50%);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .timer {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .divider {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) and (max-aspect-ratio: 1/1) {
+  .timer {
+    position: absolute;
+    top: 40vh;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .content {
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .portal {
+    z-index: unset;
+  }
+
+  .logo {
+    max-height: 38vh;
+  }
+}

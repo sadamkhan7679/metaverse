@@ -1,0 +1,146 @@
+:root {
+  --color-blue: 0, 39, 251;
+  --color-purple: 200, 80, 192;
+  --color-aqua: 0, 251, 215;
+
+  --color-rgb-1: 255, 0, 119;
+  --color-rgb-2: 145, 0, 255;
+  --color-rgb-3: 0, 237, 255;
+  --color-rgb-4: 0, 239, 0;
+  --color-rgb-5: 255, 187, 0;
+  --color-drop-shadow: 26, 32, 217;
+
+  --grad-rgb: linear-gradient(
+    45deg, 
+    rgb(var(--color-rgb-1)) 0%,
+    rgb(var(--color-rgb-2)) 25%,
+    rgb(var(--color-rgb-3)) 50%,
+    rgb(var(--color-rgb-4)) 75%,
+    rgb(var(--color-rgb-5)) 100%
+  );
+
+  --grad-1: linear-gradient(
+    45deg, 
+    rgb(var(--color-blue)) 0%, 
+    rgb(var(--color-purple)) 60%, 
+    rgb(var(--color-aqua)) 100%
+  );
+
+  --grad-2: linear-gradient(45deg, #D9AFD9 0%, rgb(var(--color-purple)) 100%);
+  --grad-3: linear-gradient(45deg, #2af598 0%, #009efd 100%);
+  --grad-4: linear-gradient(45deg, #0250c5 0%, #d43f8d 100%);
+  --grad-5: linear-gradient(45deg, #ff0844 0%, #ffb199 100%);
+  --grad-6: linear-gradient(45deg, #434343 0%, #202020 100%);
+
+  --glow-intensity: 1;
+  --glow:  
+    0 0 18px rgb(var(--color-aqua), calc(.3 * var(--glow-intensity))),
+    0 0 60px rgb(var(--color-blue), calc(.6 * var(--glow-intensity))),
+    0 0 80px rgb(var(--color-purple), calc(.6 * var(--glow-intensity)));
+
+  --glow-2:  
+    0 0 80px rgb(var(--color-aqua), calc(.1 * var(--glow-intensity))),
+    0 0 50px rgb(var(--color-blue), calc(.6 * var(--glow-intensity))),
+    0 0 5px rgb(var(--color-purple), calc(.6 * var(--glow-intensity)));
+
+  --section-bg-sea: #015164;
+  --section-bg-lime: #589500;
+  --section-bg-aqua: #009564;
+  --section-bg-cherry: #640121;
+
+
+  --font-primary: 'Atmospheric', sans-serif;
+  --font-secondary: 'Montserrat', sans-serif;
+
+  --color-font-primary: rgb(235, 235, 235);
+  --color-font-secondary: rgb(150, 150, 150);
+
+  --color-bg-primary: rgb(17, 17, 17);
+  --color-bg-secondary: rgb(43, 43, 43);
+    
+  --spacing-block-section: 150px;
+
+
+  // splash screen
+  --bg-rad-grad-light: #122c4b;
+  --bg-rad-grad-dark: #07080a;
+
+  --timer-grad-light: #17dff4;
+  --timer-grad-dark: #1b90be;
+
+  --color-font-error: #FF5050;
+  --color-font-grey-100: #CFCFCF;
+  --color-font-grey-200: #AEAEAE;
+  --color-navy: #0a0c0f;
+
+  --color-accent-yellow: #FFF120;
+  --color-accent-pink: #15CEE1;
+  --color-accent-yellow: #9a20ff;
+
+  --font-family: 'Montserrat', sans-serif;
+  --font-color: #fff;
+
+  --border-glow: 
+    0 0 6px 2px rgb(255, 255, 255),
+    0 0 18px 3px rgb(81, 154, 250, 1),
+    0 0 36px 4px rgb(81, 154, 250, 1),
+    0 0 36px 4px rgb(81, 154, 250, 1),
+    0 0 30px 10px rgb(19, 111, 231, .8);
+}
+
+*, 
+*:before, 
+*:after {
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animation {
+    animation-duration: 0s !important;
+  }
+}
+
+body {
+  // background: var(--color-bg-primary);
+  // color: var(--color-font-primary);
+  // font-family: var(--font-secondary);
+
+  background: #041a35;
+  background-image: radial-gradient(ellipse at 10% 25%, var(--bg-rad-grad-dark) 20%, var(--bg-rad-grad-light) 180%);
+  background-size: 100% 200%;
+  background-repeat: no-repeat;
+  font-family: var(--font-family);
+  color: var(--font-color);
+}
+
+body, 
+html, 
+#___gatsby,
+#gatsby-focus-wrapper {
+  min-height: 100%;
+  height: 100%;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+section {
+  max-width: 100vw;
+}
+
+main {
+  padding-bottom: 4rem;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

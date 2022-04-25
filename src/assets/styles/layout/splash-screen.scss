@@ -1,0 +1,167 @@
+.frame {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.overlay {
+  background: #0077cc;
+  inset: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: .1;
+}
+
+.ape, .portal, .city {
+  position: absolute;
+  width: 100vw;
+  height: auto;
+  display: block;
+}
+
+// PORTAL
+.portal {
+  bottom: -2%;
+  right: -8%;
+  left: unset;
+  width: 40vw;
+
+  &__image {
+    width: 100%;
+    filter: drop-shadow(0 0 100px var(--timer-grad-light));  
+    z-index: -1;
+  }
+}
+
+
+
+// CITY TOP DOWN
+.city {
+  top: 0;
+  right: -50%;
+  z-index: -1;
+  height: 100%;
+
+  &__image {
+    transform: translateX(45%) scale(1.8);
+    opacity: .02;
+  }
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  // with timer
+  grid-template-rows: 1fr 15% 1fr;
+  
+  justify-items: center;
+  place-items: center;
+
+  &.timer-expired {
+    grid-template-rows: 1fr 1fr;
+  }
+
+  width: 100%;
+
+  .text {
+    align-self: flex-end;
+    padding-bottom: 8vh;
+  }
+
+  .text, .logo, .timer {
+    width: 100%;
+  }
+}
+
+.logo, .city, .text {
+  &__image {
+    max-height: 100vh !important;
+    width: auto !important;
+    height: 100% !important;
+  }
+}
+
+// LOGO
+.logo {
+  padding-top: 10vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  max-height: 50vh;
+  align-self: flex-start;
+
+  &__image {
+    width: clamp(290px, 90vw, 1100px) !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    filter: drop-shadow(0 0 3rem rgba(23, 200, 224, 0.8)) !important;
+  }
+}
+
+// APE
+.ape {
+  bottom: -2%;
+  left: 0;
+  z-index: -1;
+  height: clamp(670px, 120vw, 960px);
+  display: flex;
+
+  &__image {
+    height: 100%;
+    object-fit: contain;
+  // transform: translateX(-45%);
+  }
+}
+
+
+// Splash Screen Logo
+.splash-screen-logo {
+  & img {
+    min-width: unset !important;
+    min-height: 75% !important;
+    max-width: 30% !important;
+
+    @media (max-width: 1921px) {
+      min-height: 70% !important;
+      max-width: 30% !important;
+    }
+
+    @media (max-width: 1580px) {
+      min-height: 90% !important;
+      max-width: 50% !important;
+    }
+
+    @media (max-width: 1025px) {
+      min-height: 75% !important;
+      max-width: 75% !important;
+    }
+
+    @media (max-width: 769px) {
+      min-height: 60% !important;
+      max-width: 100% !important;
+    }
+  }
+}
+
+// Splash Screen Ape
+.splash-screen-ape {
+  height: clamp(500px, 120vw, 650px);
+
+  @media (max-width: 1580px) {
+    height: clamp(400px, 120vw, 500px);
+  }
+}
+
+// Splash Screen City
+.splash-screen-city {
+  right: 0;
+}
